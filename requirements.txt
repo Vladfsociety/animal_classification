@@ -1,7 +1,5 @@
 numpy
-pandas
 jupyterlab
 matplotlib
-tensorflow
+tensorflow[and-cuda]
 pillow
-iteration-utilities
