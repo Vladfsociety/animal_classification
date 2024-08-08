@@ -1,5 +1,5 @@
 __pycache__/
-.venv/
+.venv_tensorflow/
 .venv_torch/
 .ipynb_checkpoints/
 data/
