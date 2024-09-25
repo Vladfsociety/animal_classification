@@ -31,17 +31,13 @@ def VGG16_pretrained():
         layer.trainable = False
 
     model.add(base_model)
-
-    print(base_model.summary())
     
     model.add(layers.Flatten())
     model.add(layers.Dense(units=4096, activation="relu"))
     model.add(layers.Dropout(0.5))
     model.add(layers.Dense(units=4096, activation="relu"))
     model.add(layers.Dropout(0.5))
-    model.add(layers.Dense(num_classes))  # Assume 10 classes
-
-    print(model.summary())
+    model.add(layers.Dense(num_classes))
 
     model.compile(optimizer=Adam(learning_rate=learning_rate),
                   loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
