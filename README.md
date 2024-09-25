@@ -1,6 +1,6 @@
 # Animal Classification with PyTorch and TensorFlow
 This repository contains implementations of several Convolutional Neural Network (CNN) models for animal classification using PyTorch and TensorFlow. The goal is to compare the performance of different architectures and frameworks on this task.
-A simple Streamlit demo has been created where the user can upload an image and test the performance of the best model (VGG16 pretrained PyTorch model).
+A simple Streamlit demo (https://simpleanimalclassification.streamlit.app/) has been created where the user can upload an image and test the performance of the best model (VGG16 pretrained PyTorch model).
 ## Dataset
 The dataset consists of 10 animal classes, with a total of about 25,000 images. You can view the dataset via this [link](https://www.kaggle.com/datasets/alessiocorrado99/animals10).
 Available animal classes:
