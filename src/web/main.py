@@ -76,21 +76,9 @@ def run():
 	model = load_model()
 
 	customize_theme()
-      
+
 	st.write(
-		"The available animal classes for prediction are:" +
-		"<ul>" +
-		"<li>Butterfly</li>" +
-		"<li>Cat</li>" +
-		"<li>Chicken</li>" + 
-		"<li>Cow</li>" +
-		"<li>Dog</li>" +
-		"<li>Elephant</li>" +  
-		"<li>Horse</li>" +
-		"<li>Sheep</li>" +
-		"<li>Spider</li>" +
-		"<li>Squirrel</li>" +
-		"</ul>",
+		"<h1 style='text-align: center;'>Animal class predictor</h1>",
 		unsafe_allow_html=True
 	)
 	
@@ -104,6 +92,6 @@ def run():
 		predicted_class = predict_class(model, image_tensor)
 
 		st.write(
-            f"<h1 style='text-align: center;'>Predicted class: {predicted_class.title()}</h1>",
+            f"<h2 style='text-align: center;'>Predicted class: {predicted_class.title()}</h1>",
             unsafe_allow_html=True
         )
