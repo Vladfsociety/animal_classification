@@ -1,0 +1,21 @@
+Model: vgg16_pretrained
+Actual class: butterfly, Predicted class: butterfly
+Actual class: butterfly, Predicted class: butterfly
+Actual class: cat, Predicted class: cat
+Actual class: cat, Predicted class: cat
+Actual class: chicken, Predicted class: chicken
+Actual class: chicken, Predicted class: chicken
+Actual class: cow, Predicted class: cow
+Actual class: cow, Predicted class: cow
+Actual class: dog, Predicted class: dog
+Actual class: dog, Predicted class: dog
+Actual class: elephant, Predicted class: elephant
+Actual class: elephant, Predicted class: elephant
+Actual class: horse, Predicted class: horse
+Actual class: horse, Predicted class: horse
+Actual class: sheep, Predicted class: cat
+Actual class: sheep, Predicted class: sheep
+Actual class: spider, Predicted class: spider
+Actual class: spider, Predicted class: spider
+Actual class: squirrel, Predicted class: squirrel
+Actual class: squirrel, Predicted class: squirrel

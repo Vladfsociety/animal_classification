@@ -1,6 +1,7 @@
 __pycache__/
 .venv_tensorflow/
 .venv_torch/
+.venv_web/
 .ipynb_checkpoints/
 data/
 .idea

@@ -2,4 +2,3 @@ numpy
 jupyterlab
 matplotlib
 tensorflow[and-cuda]
-pillow
