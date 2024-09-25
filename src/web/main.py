@@ -67,7 +67,11 @@ def load_model():
 	model = models.vgg16(weights=None)
 	num_features = model.classifier[-1].in_features
 	model.classifier[-1] = torch.nn.Linear(num_features, num_classes)
-	model.load_state_dict(torch.load('models/pytorch/vgg16_pretrained.pth', weights_only=True))
+	model.load_state_dict(torch.load(
+		'models/pytorch/vgg16_pretrained.pth',
+		weights_only=True,
+		map_location = torch.device('cpu')
+	))
 
 	return model
 
