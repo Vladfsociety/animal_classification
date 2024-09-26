@@ -70,19 +70,17 @@ def load_model():
 	model = models.vgg16(weights=None)
 	num_features = model.classifier[-1].in_features
 	model.classifier[-1] = torch.nn.Linear(num_features, num_classes)
+
 	if os.path.isfile('models/pytorch/vgg16_pretrained.pth'):
-		model.load_state_dict(torch.load(
-			'models/pytorch/vgg16_pretrained_.pth',
-			weights_only=True,
-			map_location = torch.device('cpu')
-		))
+		model_path = 'models/pytorch/vgg16_pretrained.pth'
 	else:
 		model_path = hf_hub_download(repo_id="VladKKKKK/animal_classification", filename="vgg16_pretrained.pth")
-		model.load_state_dict(torch.load(
-			model_path,
-			weights_only=True,
-			map_location = torch.device('cpu')
-		))
+		
+	model.load_state_dict(torch.load(
+		model_path,
+		weights_only=True,
+		map_location = torch.device('cpu')
+	))
 
 	return model
 
