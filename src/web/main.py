@@ -1,9 +1,11 @@
+import os.path
 import streamlit as st
 import io
 import torch
 from torchvision import models
 from torchvision import transforms
 from PIL import Image
+from huggingface_hub import hf_hub_download
 
 
 def customize_theme():
@@ -62,24 +64,33 @@ def predict_class(model, image_tensor):
 
 	return mapping[predicted_class.item()]
 
+@st.cache_resource(ttl='1d')
 def load_model():
 	num_classes = 10
 	model = models.vgg16(weights=None)
 	num_features = model.classifier[-1].in_features
 	model.classifier[-1] = torch.nn.Linear(num_features, num_classes)
-	model.load_state_dict(torch.load(
-		'models/pytorch/vgg16_pretrained.pth',
-		weights_only=True,
-		map_location = torch.device('cpu')
-	))
+	if os.path.isfile('models/pytorch/vgg16_pretrained.pth'):
+		model.load_state_dict(torch.load(
+			'models/pytorch/vgg16_pretrained_.pth',
+			weights_only=True,
+			map_location = torch.device('cpu')
+		))
+	else:
+		model_path = hf_hub_download(repo_id="VladKKKKK/animal_classification", filename="vgg16_pretrained.pth")
+		model.load_state_dict(torch.load(
+			model_path,
+			weights_only=True,
+			map_location = torch.device('cpu')
+		))
 
 	return model
 
 def run():
 
-	model = load_model()
-
 	customize_theme()
+
+	model = load_model()
 
 	st.write(
 		"<h1 style='text-align: center;'>Animal class predictor</h1>",
