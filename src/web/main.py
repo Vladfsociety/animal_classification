@@ -2,8 +2,7 @@ import os.path
 import streamlit as st
 import io
 import torch
-from torchvision import models
-from torchvision import transforms
+from torchvision import models, transforms
 from PIL import Image
 from huggingface_hub import hf_hub_download
 
